@@ -7,7 +7,6 @@ import { MenuEventEnum } from './types'
 import { useMultipleTabStore } from '/@/store/modules/multipleTab'
 import { RouteLocationNormalized, useRouter } from 'vue-router'
 import { useTabs } from '/@/hooks/web/useTabs'
-import { useI18n } from '/@/hooks/web/useI18n'
 
 export function useTabDropdown(tabContentProps: TabContentProps, getIsTabs: ComputedRef<boolean>) {
   const state = reactive({
@@ -15,7 +14,6 @@ export function useTabDropdown(tabContentProps: TabContentProps, getIsTabs: Comp
     currentIndex: 0,
   })
 
-  const { t } = useI18n()
   const tabStore = useMultipleTabStore()
   const { currentRoute } = useRouter()
   const { refreshPage, closeAll, close, closeLeft, closeOther, closeRight } = useTabs()
