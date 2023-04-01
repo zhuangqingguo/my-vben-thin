@@ -36,10 +36,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     root,
     resolve: {
       alias: [
-        {
-          find: 'vue-i18n',
-          replacement: 'vue-i18n/dist/vue-i18n.cjs.js',
-        },
         // /@/xxxx => src/xxxx
         {
           find: /\/@\//,
@@ -102,12 +98,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 
     optimizeDeps: {
       // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
-      include: [
-        '@vue/runtime-core',
-        '@vue/shared',
-        '@iconify/iconify',
-        'ant-design-vue/es/locale/zh_CN',
-      ],
+      include: ['@iconify/iconify', 'ant-design-vue/es/locale/zh_CN'],
     },
   }
 }
