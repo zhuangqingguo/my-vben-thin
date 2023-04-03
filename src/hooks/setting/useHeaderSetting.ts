@@ -56,8 +56,6 @@ export function useHeaderSetting() {
 
   const getHeaderBgColor = computed(() => appStore.getHeaderSetting.bgColor)
 
-  const getShowSearch = computed(() => appStore.getHeaderSetting.showSearch)
-
   const getShowFullScreen = computed(() => appStore.getHeaderSetting.showFullScreen)
 
   const getShowNotice = computed(() => appStore.getHeaderSetting.showNotice)
@@ -84,7 +82,6 @@ export function useHeaderSetting() {
     setHeaderSetting,
 
     getShowDoc,
-    getShowSearch,
     getHeaderTheme,
     getShowFullScreen,
     getShowNotice,

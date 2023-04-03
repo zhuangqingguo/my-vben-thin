@@ -78,12 +78,7 @@ export default defineComponent({
       getMixSideFixed,
     } = useMenuSetting()
 
-    const {
-      getShowHeader,
-      getFixed: getHeaderFixed,
-      getHeaderBgColor,
-      getShowSearch,
-    } = useHeaderSetting()
+    const { getShowHeader, getFixed: getHeaderFixed, getHeaderBgColor } = useHeaderSetting()
 
     const { getShowMultipleTab, getShowQuick, getShowRedo, getShowFold } = useMultipleTabSetting()
 
@@ -96,7 +91,7 @@ export default defineComponent({
         <>
           <TypePicker
             menuTypeList={menuTypeList}
-            handler={(item: typeof menuTypeList[0]) => {
+            handler={(item: (typeof menuTypeList)[0]) => {
               baseHandler(HandlerEnum.CHANGE_LAYOUT, {
                 mode: item.mode,
                 type: item.type,
@@ -185,12 +180,12 @@ export default defineComponent({
             def={unref(getCanDrag)}
             disabled={!unref(getShowMenuRef)}
           />
-          <SwitchItem
+          {/* <SwitchItem
             title={'菜单搜索'}
             event={HandlerEnum.HEADER_SEARCH}
             def={unref(getShowSearch)}
             disabled={!unref(getShowHeader)}
-          />
+          /> */}
           <SwitchItem
             title={'侧边菜单手风琴模式'}
             event={HandlerEnum.MENU_ACCORDION}

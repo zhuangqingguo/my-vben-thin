@@ -56,7 +56,6 @@ export interface HeaderSetting {
   showDoc: boolean
   // Show message center button
   showNotice: boolean
-  showSearch: boolean
 }
 
 export interface LocaleSetting {
