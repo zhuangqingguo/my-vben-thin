@@ -50,6 +50,8 @@ export interface HeaderSetting {
   theme: ThemeEnum
   // Turn on full screen
   showFullScreen: boolean
+  // Whether to show the lock screen
+  useLockPage: boolean
   // Show document button
   showDoc: boolean
   // Show message center button
@@ -115,6 +117,8 @@ export interface ProjectConfig {
   transitionSetting: TransitionSetting
   // pageLayout whether to enable keep-alive
   openKeepAlive: boolean
+  // Lock screen time
+  lockTime: number
   // Show breadcrumbs
   showBreadCrumb: boolean
   // Show breadcrumb icon

@@ -33,6 +33,8 @@
   import { updateColorWeak } from '/@/logics/theme/updateColorWeak'
   import { updateGrayMode } from '/@/logics/theme/updateGrayMode'
   import defaultSetting from '/@/settings/projectSetting'
+  import { changeTheme } from '/@/logics/theme'
+  import { updateSidebarBgColor } from '/@/logics/theme/updateBackground'
 
   export default defineComponent({
     name: 'SettingFooter',
@@ -58,8 +60,9 @@
       function handleResetSetting() {
         try {
           appStore.setProjectConfig(defaultSetting)
-          const { colorWeak, grayMode } = defaultSetting
-          // updateTheme(themeColor);
+          const { colorWeak, grayMode, themeColor } = defaultSetting
+          changeTheme(themeColor)
+          updateSidebarBgColor()
           updateColorWeak(colorWeak)
           updateGrayMode(grayMode)
           createMessage.success('重置成功！')

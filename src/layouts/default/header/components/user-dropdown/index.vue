@@ -38,7 +38,7 @@
 
   import { createAsyncComponent } from '/@/utils/factory/createAsyncComponent'
 
-  type MenuEvent = 'logout' | 'doc'
+  type MenuEvent = 'logout' | 'doc' | 'lock'
 
   export default defineComponent({
     name: 'UserDropdown',
@@ -61,7 +61,11 @@
         return { realName, avatar: avatar || headerImg, desc }
       })
 
-      const [register] = useModal()
+      const [register, { openModal }] = useModal()
+
+      function handleLock() {
+        openModal(true)
+      }
 
       //  login out
       function handleLoginOut() {
@@ -80,6 +84,9 @@
             break
           case 'doc':
             openDoc()
+            break
+          case 'lock':
+            handleLock()
             break
         }
       }

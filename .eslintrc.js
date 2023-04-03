@@ -50,6 +50,7 @@ module.exports = {
     ],
     'space-before-function-paren': 'off',
     semi: ['error', 'never'], //语句分号结尾
+
     'vue/attributes-order': 'off',
     'vue/one-component-per-file': 'off',
     'vue/html-closing-bracket-newline': 'off',

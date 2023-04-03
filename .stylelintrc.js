@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   plugins: ['stylelint-order'],
-  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+  extends: ['stylelint-config-standard'],
   customSyntax: 'postcss-html',
   rules: {
     'function-no-unknown': null,
@@ -9,7 +9,7 @@ module.exports = {
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['global'],
+        ignorePseudoClasses: ['global', 'deep'],
       },
     ],
     'selector-pseudo-element-no-unknown': [

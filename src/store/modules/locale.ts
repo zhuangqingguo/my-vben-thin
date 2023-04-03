@@ -21,8 +21,8 @@ export const useLocaleStore = defineStore({
     localInfo: lsLocaleSetting,
   }),
   getters: {
-    getLocale(): LocaleType {
-      return this.localInfo?.locale ?? 'zh_CN'
+    getLocale(state): LocaleType {
+      return state.localInfo?.locale ?? 'zh_CN'
     },
   },
   actions: {

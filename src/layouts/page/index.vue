@@ -17,9 +17,7 @@
         <keep-alive v-if="openCache" :include="getCaches">
           <component :is="Component" :key="route.fullPath" />
         </keep-alive>
-        <div v-else :key="route.name">
-          <component :is="Component" :key="route.fullPath" />
-        </div>
+        <component v-else :is="Component" :key="route.fullPath" />
       </transition>
     </template>
   </RouterView>
@@ -42,7 +40,7 @@
       const { getShowMultipleTab } = useMultipleTabSetting()
       const tabStore = useMultipleTabStore()
 
-      const { getOpenKeepAlive } = useRootSetting()
+      const { getOpenKeepAlive, getCanEmbedIFramePage } = useRootSetting()
 
       const { getBasicTransition, getEnableTransition } = useTransitionSetting()
 
@@ -61,6 +59,7 @@
         getEnableTransition,
         getBasicTransition,
         getCaches,
+        getCanEmbedIFramePage,
       }
     },
   })
