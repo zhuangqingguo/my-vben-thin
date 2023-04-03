@@ -35,11 +35,11 @@
     <div :class="`${prefixCls}-action`">
       <!-- <Notify v-if="getShowNotice" :class="`${prefixCls}-action__item notify-item`" /> -->
 
+      <SettingDrawer v-if="getShowSetting" :class="`${prefixCls}-action__item`" />
+
       <FullScreen v-if="getShowFullScreen" :class="`${prefixCls}-action__item fullscreen-item`" />
 
       <UserDropDown :theme="getHeaderTheme" />
-
-      <SettingDrawer v-if="getShowSetting" :class="`${prefixCls}-action__item`" />
     </div>
   </Header>
 </template>

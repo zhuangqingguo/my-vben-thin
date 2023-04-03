@@ -14,10 +14,6 @@ function pathResolve(dir: string) {
 }
 
 const { dependencies, devDependencies, name, version } = pkg
-const __APP_INFO__ = {
-  pkg: { dependencies, devDependencies, name, version },
-  lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss'),
-}
 
 export default async ({ command, mode }: ConfigEnv): Promise<UserConfig> => {
   const root = process.cwd()
@@ -73,11 +69,8 @@ export default async ({ command, mode }: ConfigEnv): Promise<UserConfig> => {
       //   },
       // },
       // Turning off brotliSize display can slightly reduce packaging time
-      brotliSize: false,
+      reportCompressedSize: false,
       chunkSizeWarningLimit: 2000,
-    },
-    define: {
-      __APP_INFO__: JSON.stringify(__APP_INFO__),
     },
 
     css: {
