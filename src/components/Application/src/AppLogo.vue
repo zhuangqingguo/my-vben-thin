@@ -34,6 +34,8 @@
     alwaysShowTitle: { type: Boolean },
   })
 
+  console.log(111111, props.theme)
+
   const { prefixCls } = useDesign('app-logo')
   const { getCollapsedShowTitle } = useMenuSetting()
   const userStore = useUserStore()

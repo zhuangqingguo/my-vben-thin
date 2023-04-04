@@ -11,7 +11,7 @@
 
     <template #overlay>
       <Menu @click="handleMenuClick">
-        <MenuItem key="doc" :text="'文档'" icon="ion:document-text-outline" v-if="getShowDoc" />
+        <MenuItem key="doc" :text="'个人中心'" icon="ion:document-text-outline" v-if="getShowDoc" />
         <MenuDivider v-if="getShowDoc" />
         <MenuItem key="logout" :text="'退出系统'" icon="ion:power-outline" />
       </Menu>

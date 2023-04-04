@@ -129,6 +129,8 @@
       function renderHeader() {
         if (!unref(getIsShowLogo) && !unref(getIsMobile)) return null
 
+        console.log(2222222, unref(getLogoClass), unref(getComputedMenuTheme))
+
         return (
           <AppLogo
             showTitle={!unref(getCollapsed)}
@@ -140,7 +142,7 @@
 
       function renderMenu() {
         const { menus, ...menuProps } = unref(getCommonProps)
-        // console.log(menus);
+        console.log(33333, menus, menuProps)
         if (!menus || !menus.length) return null
         return !props.isHorizontal ? (
           <SimpleMenu {...menuProps} isSplitMenu={unref(getSplit)} items={menus} />
