@@ -1,6 +1,4 @@
 import type { UserConfig, ConfigEnv } from 'vite'
-import pkg from './package.json'
-import dayjs from 'dayjs'
 import { loadEnv } from 'vite'
 import { resolve } from 'path'
 import { generateModifyVars } from './build/generate/generateModifyVars'
@@ -12,8 +10,6 @@ import { OUTPUT_DIR } from './build/constant'
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir)
 }
-
-const { dependencies, devDependencies, name, version } = pkg
 
 export default async ({ command, mode }: ConfigEnv): Promise<UserConfig> => {
   const root = process.cwd()
