@@ -6,6 +6,7 @@ import { createProxy } from './build/vite/proxy'
 import { wrapperEnv } from './build/utils'
 import { createVitePlugins } from './build/vite/plugin'
 import { OUTPUT_DIR } from './build/constant'
+import { include, exclude } from './build/vite/optimize'
 
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir)
@@ -41,6 +42,7 @@ export default async ({ command, mode }: ConfigEnv): Promise<UserConfig> => {
       ],
     },
     server: {
+      port: 3100,
       // Listening on all local IPs
       host: true,
       // Load proxy configuration from .env
@@ -81,9 +83,11 @@ export default async ({ command, mode }: ConfigEnv): Promise<UserConfig> => {
     // The vite plugin used by the project. The quantity is large, so it is separately extracted and managed
     plugins: await createVitePlugins(viteEnv, isBuild),
 
-    optimizeDeps: {
-      // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
-      include: ['@iconify/iconify', 'ant-design-vue/es/locale/zh_CN'],
-    },
+    // optimizeDeps: {
+    //   // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
+    //   include: ['@iconify/iconify', 'ant-design-vue/es/locale/zh_CN'],
+
+    // },
+    optimizeDeps: { include, exclude },
   }
 }

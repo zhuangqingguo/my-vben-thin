@@ -54,7 +54,7 @@
             } = appStore.getProjectConfig
             appStore.setProjectConfig({
               menuSetting: {
-                type: MenuTypeEnum.SIDEBAR,
+                type: MenuTypeEnum.MIX,
                 mode: MenuModeEnum.INLINE,
                 split: false,
               },
