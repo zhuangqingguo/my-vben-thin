@@ -21,7 +21,6 @@ const include = [
   '@zxcvbn-ts/core',
   '@iconify/iconify',
   'ant-design-vue',
-  'ant-design-vue/es/locale/zh_CN',
 ]
 
 const exclude = ['@iconify/json']

@@ -12,14 +12,15 @@ html[data-theme='light'] {
   .@{prefix-cls} {
     .ant-tabs-tab:not(.ant-tabs-tab-active) {
       border: 1px solid #d9d9d9 !important;
+      border-bottom: none !important;
     }
   }
 }
 
 .@{prefix-cls} {
   z-index: 10;
-  height: @multiple-height + 2;
-  line-height: @multiple-height + 2;
+  height: @multiple-height + 1;
+  line-height: @multiple-height + 1;
   background-color: @component-background;
   border-bottom: 1px solid @border-color-base;
 
@@ -37,17 +38,22 @@ html[data-theme='light'] {
       box-shadow: none;
 
       .ant-tabs-nav-container {
-        height: @multiple-height;
+        height: @multiple-item-height;
         padding-top: 2px;
       }
 
+      &::before {
+        border: none;
+      }
+
       .ant-tabs-tab {
-        height: calc(@multiple-height - 2px);
+        height: calc(@multiple-item-height - 2px);
         padding-right: 12px;
-        line-height: calc(@multiple-height - 2px);
+        line-height: calc(@multiple-item-height - 2px);
         color: @text-color-base;
         background-color: @component-background;
         transition: none;
+        border-radius: 4px 4px 0 0;
 
         &:hover {
           .ant-tabs-tab-remove {
@@ -56,11 +62,11 @@ html[data-theme='light'] {
         }
 
         .ant-tabs-tab-remove {
-          width: 8px;
-          height: 28px;
-          font-size: 12px;
+          width: 16px;
+          height: 32px;
+          font-size: 16px;
           color: inherit;
-          opacity: 0;
+          opacity: 0.6;
           transition: none;
           margin-left: 2px;
           margin-right: -4px;
@@ -112,7 +118,7 @@ html[data-theme='light'] {
     }
 
     .ant-tabs-nav > div:nth-child(1) {
-      padding: 0 6px;
+      padding: 0 16px;
 
       .ant-tabs-tab {
         margin-right: 3px !important;
@@ -122,12 +128,16 @@ html[data-theme='light'] {
 
   .ant-tabs-tab:not(.ant-tabs-tab-active) {
     .anticon-close {
-      font-size: 12px;
+      font-size: 16px;
 
       svg {
         width: 0.6em;
       }
     }
+  }
+
+  .ant-tabs-nav-list {
+    padding-top: 6px;
   }
 
   .ant-dropdown-trigger {
@@ -171,10 +181,10 @@ html[data-theme='light'] {
     &__info {
       display: inline-block;
       width: 100%;
-      height: @multiple-height - 2;
+      height: @multiple-item-height - 2;
       padding-left: 0;
       margin-left: -10px;
-      font-size: 12px;
+      font-size: 14px;
       cursor: pointer;
       user-select: none;
     }
