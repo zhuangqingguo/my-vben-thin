@@ -13,9 +13,9 @@ import { setupRouterGuard } from '/@/router/guard'
 import { setupStore } from '/@/store'
 import { setupGlobDirectives } from '/@/directives'
 import { registerGlobComp } from '/@/components/registerGlobComp'
+import Antd from 'ant-design-vue'
 
 import { isDevMode } from './utils/env'
-
 if (isDevMode()) {
   // import('ant-design-vue/es/style')
   import('ant-design-vue/dist/antd.less')
@@ -53,7 +53,7 @@ async function bootstrap() {
   // https://next.router.vuejs.org/api/#isready
   // await router.isReady();
 
-  app.mount('#app')
+  app.use(Antd).mount('#app')
 }
 
 bootstrap()

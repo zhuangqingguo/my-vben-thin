@@ -8,8 +8,28 @@
         </span>
       </div>
     </template>
+    <a-input-number id="inputNumber" v-model:value="value" :min="1" :max="10" />
+    <hr />
+    <a-button type="primary">Primary Button</a-button>
+    <a-button>Default Button</a-button>
+    <a-button type="dashed">Dashed Button</a-button>
+    <a-button type="text">Text Button</a-button>
+    <a-button type="link">Link Button</a-button>
+
+    <a-steps :current="1">
+      <a-step title="Finished" />
+      <a-step title="In Progress" />
+      <a-step title="Waiting" />
+    </a-steps>
+
+    <a-tooltip placement="topLeft" title="Prompt Text">
+      <a-button>Align edge / 边缘对齐</a-button>
+    </a-tooltip>
   </PageWrapper>
 </template>
 <script lang="ts" setup>
   import { PageWrapper } from '/@/components/Page'
+  import { reactive, ref } from 'vue'
+
+  const value = ref(1)
 </script>
