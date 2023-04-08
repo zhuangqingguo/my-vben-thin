@@ -1,6 +1,7 @@
 <template>
   <PageWrapper>
     <template #headerContent> <WorkbenchHeader /> </template>
+    <a-input />
     <div class="lg:flex">
       <div class="lg:w-7/10 w-full !mr-4 enter-y">
         <ProjectCard :loading="loading" class="enter-y" />
@@ -18,7 +19,7 @@
     </div>
   </PageWrapper>
 </template>
-<script lang="ts" setup>
+<script lang="ts" setup name="Workbench">
   import { ref } from 'vue'
   import { Card } from 'ant-design-vue'
   import { PageWrapper } from '/@/components/Page'

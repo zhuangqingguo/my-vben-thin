@@ -22,6 +22,7 @@ const about: AppRouteModule = {
         title: '关于',
         icon: 'simple-icons:about-dot-me',
         hideMenu: true,
+        ignoreKeepAlive: false, // 需要页面缓存
       },
     },
   ],

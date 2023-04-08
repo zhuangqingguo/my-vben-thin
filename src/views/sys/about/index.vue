@@ -15,19 +15,33 @@
     <a-button type="dashed">Dashed Button</a-button>
     <a-button type="text">Text Button</a-button>
     <a-button type="link">Link Button</a-button>
+    <a-button type="link">Link Button</a-button>
+    <br />
+    <br />
 
     <a-steps :current="1">
       <a-step title="Finished" />
       <a-step title="In Progress" />
       <a-step title="Waiting" />
     </a-steps>
+    <br />
+    <br />
+
+    <v-button type="primary">Primary Button</v-button>
+    <v-button>Default Button</v-button>
+    <v-button type="dashed">Dashed Button</v-button>
+    <v-button type="text">Text Button</v-button>
+    <v-button type="link">Link Button</v-button>
+    <v-button type="link">Link Button</v-button>
+    <br />
+    <br />
 
     <a-tooltip placement="topLeft" title="Prompt Text">
       <a-button>Align edge / 边缘对齐</a-button>
     </a-tooltip>
   </PageWrapper>
 </template>
-<script lang="ts" setup>
+<script lang="ts" setup name="AboutPage">
   import { PageWrapper } from '/@/components/Page'
   import { reactive, ref } from 'vue'
 

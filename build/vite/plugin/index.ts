@@ -2,6 +2,7 @@ import { PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import purgeIcons from 'vite-plugin-purge-icons'
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import { configHtmlPlugin } from './html'
 import { configMockPlugin } from './mock'
 import { configThemePlugin } from './theme'
@@ -21,6 +22,9 @@ export async function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
 
   // vite-plugin-html
   vitePlugins.push(configHtmlPlugin(viteEnv, isBuild))
+
+  // vite-plugin-vue-setup-extend // setup模式下name问题
+  vitePlugins.push(VueSetupExtend())
 
   // vite-plugin-svg-icons
   vitePlugins.push(configSvgIconsPlugin(isBuild))

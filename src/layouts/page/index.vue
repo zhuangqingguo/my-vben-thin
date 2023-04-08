@@ -45,6 +45,7 @@
       const { getBasicTransition, getEnableTransition } = useTransitionSetting()
 
       const openCache = computed(() => unref(getOpenKeepAlive) && unref(getShowMultipleTab))
+      console.log(22322222, tabStore.getCachedTabList)
 
       const getCaches = computed((): string[] => {
         if (!unref(getOpenKeepAlive)) {

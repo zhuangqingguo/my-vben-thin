@@ -8,7 +8,7 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
+<script lang="ts" setup name="Analysis">
   import { ref } from 'vue'
   import SiteAnalysis from './components/SiteAnalysis.vue'
   import VisitSource from './components/VisitSource.vue'

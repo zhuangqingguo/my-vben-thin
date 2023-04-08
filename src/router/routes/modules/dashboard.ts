@@ -20,6 +20,7 @@ const dashboard: AppRouteModule = {
       meta: {
         // affix: true,
         title: '分析页',
+        ignoreKeepAlive: false, // 需要页面缓存
       },
     },
     {
@@ -28,6 +29,7 @@ const dashboard: AppRouteModule = {
       component: () => import('/@/views/dashboard/workbench/index.vue'),
       meta: {
         title: '工作台',
+        ignoreKeepAlive: false, // 需要页面缓存
       },
     },
   ],
