@@ -28,7 +28,7 @@ export default async ({ command, mode }: ConfigEnv): Promise<UserConfig> => {
     base: VITE_PUBLIC_PATH,
     root,
     resolve: {
-      extensions: ['.js', '.ts', '.jsx', '.tsx', '.vue'],
+      extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
       alias: [
         // /@/xxxx => src/xxxx
         {
