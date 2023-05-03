@@ -5,6 +5,10 @@ import 'tailwindcss/utilities.css'
 
 // Register icon sprite
 import 'virtual:svg-icons-register'
+
+import '/@/components/VxeTable/src/css/index.scss'
+import 'ant-design-vue/dist/antd.less'
+
 import App from './App.vue'
 import { createApp } from 'vue'
 import { initAppConfigStore } from '/@/logics/initAppConfig'
@@ -15,11 +19,11 @@ import { setupGlobDirectives } from '/@/directives'
 import { registerGlobComp } from '/@/components/registerGlobComp'
 import Antd from 'ant-design-vue'
 
-import { isDevMode } from './utils/env'
-if (isDevMode()) {
-  // import('ant-design-vue/es/style')
-  import('ant-design-vue/dist/antd.less')
-}
+// import { isDevMode } from './utils/env'
+// if (isDevMode()) {
+//   // import('ant-design-vue/es/style')
+//   import('ant-design-vue/dist/antd.less')
+// }
 
 async function bootstrap() {
   const app = createApp(App)

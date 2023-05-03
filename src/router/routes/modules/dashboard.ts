@@ -32,6 +32,14 @@ const dashboard: AppRouteModule = {
         ignoreKeepAlive: false, // 需要页面缓存
       },
     },
+    {
+      path: 'vxeTable',
+      name: 'VxeTableDemo',
+      component: () => import('/@/views/sys/table/VxeTable.vue'),
+      meta: {
+        title: 'VxeTable',
+      },
+    },
   ],
 }
 
