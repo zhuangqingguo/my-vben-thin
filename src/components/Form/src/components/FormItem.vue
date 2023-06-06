@@ -1,5 +1,4 @@
 <script lang="tsx">
-  import { type Recordable, type Nullable } from '@vben/types'
   import type { PropType, Ref } from 'vue'
   import { computed, defineComponent, toRefs, unref } from 'vue'
   import type { FormActionType, FormProps, FormSchema } from '../types/form'
@@ -31,11 +30,11 @@
         default: () => ({}),
       },
       allDefaultValues: {
-        type: Object as PropType<Recordable<any>>,
+        type: Object as PropType<any>,
         default: () => ({}),
       },
       formModel: {
-        type: Object as PropType<Recordable<any>>,
+        type: Object as PropType<any>,
         default: () => ({}),
       },
       setFormModel: {
@@ -70,7 +69,7 @@
             ...mergeDynamicData,
             ...allDefaultValues,
             ...formModel,
-          } as Recordable<any>,
+          } as any,
           schema: schema,
         }
       })
@@ -91,7 +90,7 @@
             componentProps,
           )
         }
-        return componentProps as Recordable<any>
+        return componentProps as any
       })
 
       const getDisable = computed(() => {
@@ -251,7 +250,7 @@
         const eventKey = `on${upperFirst(changeEvent)}`
 
         const on = {
-          [eventKey]: (...args: Nullable<Recordable<any>>[]) => {
+          [eventKey]: (...args: any[]) => {
             const [e] = args
             if (propsData[eventKey]) {
               propsData[eventKey](...args)
@@ -264,7 +263,7 @@
         const Comp = componentMap.get(component) as ReturnType<typeof defineComponent>
 
         const { autoSetPlaceHolder, size } = props.formProps
-        const propsData: Recordable<any> = {
+        const propsData: any = {
           allowClear: true,
           getPopupContainer: (trigger: Element) => trigger.parentNode,
           size,
@@ -281,11 +280,11 @@
         propsData.codeField = field
         propsData.formValues = unref(getValues)
 
-        const bindValue: Recordable<any> = {
+        const bindValue: any = {
           [valueField || (isCheck ? 'checked' : 'value')]: props.formModel[field],
         }
 
-        const compAttr: Recordable<any> = {
+        const compAttr: any = {
           ...propsData,
           ...on,
           ...bindValue,
@@ -360,7 +359,7 @@
               name={field}
               colon={colon}
               class={{ 'suffix-item': showSuffix }}
-              {...(itemProps as Recordable<any>)}
+              {...(itemProps as any)}
               label={renderLabelHelpMessage()}
               rules={handleRules()}
               labelCol={labelCol}
