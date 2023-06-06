@@ -1,6 +1,6 @@
 <!-- <script lang="ts">
   export default {
-    name: 'Table',
+    name: 'Table',//
   }
 </script> -->
 <script lang="ts" setup name="VbenTable">
